@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="5" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          container: {
+            padding: '16px',
+            center: true
+          }
+        }
+      }
+    }
+  </script>
+  <title>Water & Wind Status Level Generator</title>
+</head>
+
+<body>
+  <div class="container p-24 w-full">
+    <h1 class="text-center font-bold text-5xl drop-shadow-2xl">Water & Wind Status</h1>
+    <div class="flex justify-center mt-10">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="block px-16 py-12 max-w-sm bg-sky-400 rounded-lg border border-gray-200 shadow-md hover:bg-sky-300 flex flex-col items-center">
+          <h1 class="font-semibold text-xl">Water</h1>
+          <h1 class="font-bold text-5xl mt-5">{{.Status.Water}}m</h1>
+          <h1 class="font-semibold text-xl">{{.Condition.Water}}</h1>
+        </div>
+        <div
+          class="block px-16 py-12 max-w-sm bg-green-400 rounded-lg border border-gray-200 shadow-md hover:bg-green-300 flex flex-col items-center">
+          <h1 class="font-semibold text-xl">Wind</h1>
+          <h1 class="font-bold text-5xl mt-5">{{.Status.Wind}}m/s</h1>
+          <h2 class="font-semibold text-xl">{{.Condition.Wind}}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
